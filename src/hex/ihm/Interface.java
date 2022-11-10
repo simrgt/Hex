@@ -1,6 +1,7 @@
 package hex.ihm;
 
 import hex.jeu.IPlateau;
+import hex.jeu.Plateau.Coordonnée;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -12,14 +13,19 @@ public class Interface implements IIhm{
         System.out.println(p);
     }
 
-    public int[] jouerTour(IPlateau p) {
-        int[] i = new int[2];
+    public Coordonnée jouerTour(IPlateau p) {
         Scanner sc = new Scanner(System.in);
-        while (sc.hasNextLine()) {
-            i[0] = sc.nextInt();
-            i[1] = sc.nextInt();
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        Coordonnée i = new Coordonnée(a,b);
+        while (!i.estBonne(p.getTaille())) {
+            System.out.println("Remettre coordonnée");
+            i = new Coordonnée(sc.nextInt(),sc.nextInt());
         }
-        sc.close();
         return i;
+    }
+
+    public void finPartie() {
+        System.out.println("Fin de la partie");
     }
 }

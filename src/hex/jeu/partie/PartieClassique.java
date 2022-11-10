@@ -3,6 +3,7 @@ package hex.jeu.partie;
 import hex.ihm.IIhm;
 import hex.ihm.Interface;
 import hex.jeu.IPlateau;
+import hex.jeu.Plateau.Coordonnée;
 import hex.jeu.Plateau.PlateauClassique;
 
 import java.util.Scanner;
@@ -39,7 +40,8 @@ public class PartieClassique implements IPartie {
 
     public void lancerTour(int j) {
         ihm.afficherPlateau(plateau);
-        int[] jeuTour = ihm.jouerTour(plateau);
+        Coordonnée jeuTour;
+        jeuTour = ihm.jouerTour(plateau);
         plateau.jouerTour(jeuTour, j);
     }
 }

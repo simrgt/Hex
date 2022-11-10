@@ -1,9 +1,12 @@
 package hex.ihm;
 
 import hex.jeu.IPlateau;
+import hex.jeu.Plateau.Coordonnée;
 
 public interface IIhm {
     void afficherPlateau(IPlateau p);
 
-    int[] jouerTour(IPlateau p);
+    Coordonnée jouerTour(IPlateau p);
+
+    void finPartie();
 }
