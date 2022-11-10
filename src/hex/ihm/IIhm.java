@@ -9,4 +9,7 @@ public interface IIhm {
     Coordonnée jouerTour(IPlateau p);
 
     void finPartie();
+    int choixTaille();
+
+    void afficherJoueur(int j);
 }

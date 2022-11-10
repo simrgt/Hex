@@ -1,6 +1,5 @@
 package hex.jeu.Plateau;
 
-import hex.jeu.Plateau.Plateau;
 
 import java.util.ArrayList;
 

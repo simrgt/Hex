@@ -1,23 +1,23 @@
 package hex.jeu.partie;
 
+import hex.ihm.Graphique;
 import hex.ihm.IIhm;
 import hex.ihm.Interface;
 import hex.jeu.IPlateau;
 import hex.jeu.Plateau.Coordonnée;
 import hex.jeu.Plateau.PlateauClassique;
 
-import java.util.Scanner;
 
 public class PartieClassique implements IPartie {
-    private final static int NBJOUEUR = 2;
-    private String j1;
-    private String j2;
     private IIhm ihm;
     private IPlateau plateau;
 
-    public PartieClassique() {
-        ihm = new Interface();
-        plateau = new PlateauClassique(11);
+    public PartieClassique(int i) {
+        System.out.println(i);
+        if (i == 1) ihm = new Interface();
+        else if (i == 2) ihm = new Graphique();
+        int c = ihm.choixTaille();
+        plateau = new PlateauClassique(c);
     }
 
     public void lancerPartie() {
@@ -40,6 +40,7 @@ public class PartieClassique implements IPartie {
 
     public void lancerTour(int j) {
         ihm.afficherPlateau(plateau);
+        ihm.afficherJoueur(j);
         Coordonnée jeuTour;
         jeuTour = ihm.jouerTour(plateau);
         plateau.jouerTour(jeuTour, j);

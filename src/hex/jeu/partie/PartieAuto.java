@@ -18,7 +18,7 @@ public class PartieAuto implements IPartie{
     private IIhm ihm;
     private IPlateau plateau;
 
-    public PartieAuto() {
+    public PartieAuto(int i) {
         ihm = new Interface();
         plateau = new PlateauClassique(11);
     }
@@ -26,7 +26,7 @@ public class PartieAuto implements IPartie{
     public void lancerPartie() {
         initialiserJoueur();
         int joueurActif = 0;
-        Scanner sc = new Scanner(System.in);
+        Scanner sc;
         File file = new File("test2.txt");
         try {
             sc = new Scanner(file);
