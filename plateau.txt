@@ -1,0 +1,25 @@
+* * * *
+ * * * *
+  * * * *
+   * * * *
+
+
+  A B C D
+1 * * * *
+2  * * * *
+3   * * * *
+4    * * * *
+
+
+Déclarer constante du joueur 
+DEFINE JOUEUR = "X";
+DEFINE JOUEUR2 = "0";
+
+assertEquals pour les tests unitaires
+
+attention au saut de ligne pas \n mais constante java
+
+pour plateau : tableau 2d ou map ou arraylist ou tableau 1D
+pour map : clé case, valeur couleur
+
+tableau 2D
