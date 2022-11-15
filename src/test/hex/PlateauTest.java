@@ -2,9 +2,9 @@ package test.hex;
 
 import hex.jeu.IPlateau;
 import hex.jeu.Plateau.PlateauClassique;
-import org.junit.Test;
+import org.testng.annotations.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class PlateauTest {
@@ -12,7 +12,6 @@ public class PlateauTest {
     @Test
     public void test() {
         final int largeur = 11;
-        final int hauteur = 11;
         IPlateau p = new PlateauClassique(largeur);
         assertEquals(
                 "  A B C D E F G H I J K\n" +

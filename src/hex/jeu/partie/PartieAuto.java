@@ -32,10 +32,10 @@ public class PartieAuto implements IPartie{
             sc = new Scanner(file);
             if (sc.hasNextLine()) {
                 while(!this.estFinie()) {
-                    Coordonnée i = new Coordonnée(sc.nextInt(),sc.nextInt());
+                    Coordonnée i = new Coordonnée(sc.nextInt()-1, (sc.next().charAt(0))-65);
                     while (!i.estBonne(plateau.getTaille())) {
                         System.out.println("Remettre coordonnée");
-                        i = new Coordonnée(sc.nextInt(),sc.nextInt());
+                        i = new Coordonnée(sc.nextInt()-1, (sc.next().charAt(0))-65);
                     }
                     plateau.jouerTour(i, joueurActif);
                     ihm.afficherPlateau(plateau);

@@ -113,6 +113,14 @@ public class PlateauClassique extends Plateau {
         return false;
     }
 
+    private boolean verifCaseNoir(Coordonnée c, Coordonnée origin) {
+        for (Coordonnée coo : autourCase(c,origin)) {
+            if (coo.getY() == plateau.length-1) return true;
+            else verifCaseBlanc(coo,c);
+        }
+        return false;
+    }
+
     public boolean fini() {
         int rempli = 0;
         for (int i = 0; i < plateau.length; i++)
@@ -123,6 +131,10 @@ public class PlateauClassique extends Plateau {
             if (plateau[i][0] == BLANC) {
                 Coordonnée c = new Coordonnée(i,0);
                 if (verifCaseBlanc(c,null)) return true;
+            }
+            if (plateau[0][i] == NOIR) {
+                Coordonnée c = new Coordonnée(i,0);
+                if (verifCaseNoir(c,null)) return true;
             }
         }
 
