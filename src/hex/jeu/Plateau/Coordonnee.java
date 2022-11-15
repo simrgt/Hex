@@ -1,10 +1,10 @@
 package hex.jeu.Plateau;
 
-public class Coordonnée {
+public class Coordonnee {
     private int x;
     private int y;
 
-    public Coordonnée(int a, int b) {
+    public Coordonnee(int a, int b) {
         x = a;
         y = b;
     }

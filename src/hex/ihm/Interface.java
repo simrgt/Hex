@@ -1,7 +1,7 @@
 package hex.ihm;
 
 import hex.jeu.IPlateau;
-import hex.jeu.Plateau.Coordonnée;
+import hex.jeu.Plateau.Coordonnee;
 
 import java.util.Scanner;
 
@@ -16,17 +16,17 @@ public class Interface implements IIhm{
         else if (j == 1) System.out.println("Vous êtes le joueur Noir, vos pions sont les O");
     }
 
-    public Coordonnée jouerTour(IPlateau p) {
+    public Coordonnee jouerTour(IPlateau p) {
         System.out.println("Rentrez les coordonnées de votre coups de la manière suivante : Nombre Lettre");
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt()-1;
         int b = Character.getNumericValue(sc.next().charAt(0))-10;
-        Coordonnée i = new Coordonnée(a,b);
+        Coordonnee i = new Coordonnee(a,b);
         while (!i.estBonne(p.getTaille())) {
             System.out.println("Remettre coordonnée");
             a = sc.nextInt()-1;
             b = Character.getNumericValue(sc.next().charAt(0))-11;
-            i = new Coordonnée(a,b);
+            i = new Coordonnee(a,b);
         }
         return i;
     }

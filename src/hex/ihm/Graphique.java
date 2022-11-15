@@ -1,7 +1,7 @@
 package hex.ihm;
 
 import hex.jeu.IPlateau;
-import hex.jeu.Plateau.Coordonnée;
+import hex.jeu.Plateau.Coordonnee;
 
 import javax.swing.*;
 import java.util.Scanner;
@@ -17,7 +17,7 @@ public class Graphique implements IIhm{
 
     }
 
-    public Coordonnée jouerTour(IPlateau p) {
+    public Coordonnee jouerTour(IPlateau p) {
         JFrame frame = new JFrame("Hello World");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(250, 250);
@@ -25,10 +25,10 @@ public class Graphique implements IIhm{
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
         int b = sc.nextInt();
-        Coordonnée i = new Coordonnée(a,b);
+        Coordonnee i = new Coordonnee(a,b);
         while (!i.estBonne(p.getTaille())) {
             System.out.println("Remettre coordonnée");
-            i = new Coordonnée(sc.nextInt(),sc.nextInt());
+            i = new Coordonnee(sc.nextInt(),sc.nextInt());
         }
         return i;
     }

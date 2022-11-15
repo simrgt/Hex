@@ -4,7 +4,7 @@ import hex.ihm.Graphique;
 import hex.ihm.IIhm;
 import hex.ihm.Interface;
 import hex.jeu.IPlateau;
-import hex.jeu.Plateau.Coordonnée;
+import hex.jeu.Plateau.Coordonnee;
 import hex.jeu.Plateau.PlateauClassique;
 
 
@@ -41,7 +41,7 @@ public class PartieClassique implements IPartie {
     public void lancerTour(int j) {
         ihm.afficherPlateau(plateau);
         ihm.afficherJoueur(j);
-        Coordonnée jeuTour;
+        Coordonnee jeuTour;
         jeuTour = ihm.jouerTour(plateau);
         plateau.jouerTour(jeuTour, j);
     }

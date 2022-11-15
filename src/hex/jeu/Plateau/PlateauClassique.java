@@ -45,76 +45,76 @@ public class PlateauClassique extends Plateau {
         return s;
     }
 
-    private ArrayList<Coordonnée> autourCase(Coordonnée c, Coordonnée origin) {
+    private ArrayList<Coordonnee> autourCase(Coordonnee c, Coordonnee origin) {
         int position = plateau[c.getX()][c.getY()];
-        ArrayList<Coordonnée> autour = new ArrayList<>();
+        ArrayList<Coordonnee> autour = new ArrayList<>();
         if (origin == null || (origin.getX() != c.getX() && origin.getY() != c.getY())) {
             if (c.getX() == 0 && c.getY() == 0) {
                 if (plateau[c.getX()][c.getY() + 1] == position && origin.getX() != c.getX() && origin.getY() != 0)
-                    autour.add(new Coordonnée(c.getX(), c.getY() + 1));
-                if (plateau[c.getX() + 1][c.getY()] == position) autour.add(new Coordonnée(c.getX() + 1, c.getY()));
+                    autour.add(new Coordonnee(c.getX(), c.getY() + 1));
+                if (plateau[c.getX() + 1][c.getY()] == position) autour.add(new Coordonnee(c.getX() + 1, c.getY()));
             } else if (c.getX() == 0 && c.getY() == plateau.length-1) {
-                if (plateau[c.getX() + 1][c.getY()] == position) autour.add(new Coordonnée(c.getX() + 1, c.getY()));
+                if (plateau[c.getX() + 1][c.getY()] == position) autour.add(new Coordonnee(c.getX() + 1, c.getY()));
                 if (plateau[c.getX() + 1][c.getY() - 1] == position)
-                    autour.add(new Coordonnée(c.getX() + 1, c.getY() - 1));
-                if (plateau[c.getX()][c.getY() - 1] == position) autour.add(new Coordonnée(c.getX(), c.getY() - 1));
+                    autour.add(new Coordonnee(c.getX() + 1, c.getY() - 1));
+                if (plateau[c.getX()][c.getY() - 1] == position) autour.add(new Coordonnee(c.getX(), c.getY() - 1));
             } else if (c.getX() == plateau.length-1 && c.getY() == 0) {
-                if (plateau[c.getX() - 1][c.getY()] == position) autour.add(new Coordonnée(c.getX() - 1, c.getY()));
+                if (plateau[c.getX() - 1][c.getY()] == position) autour.add(new Coordonnee(c.getX() - 1, c.getY()));
                 if (plateau[c.getX() - 1][c.getY() + 1] == position)
-                    autour.add(new Coordonnée(c.getX() - 1, c.getY() + 1));
-                if (plateau[c.getX()][c.getY() + 1] == position) autour.add(new Coordonnée(c.getX(), c.getY() + 1));
+                    autour.add(new Coordonnee(c.getX() - 1, c.getY() + 1));
+                if (plateau[c.getX()][c.getY() + 1] == position) autour.add(new Coordonnee(c.getX(), c.getY() + 1));
             } else if (c.getX() == plateau.length && c.getY() == plateau.length-1) {
-                if (plateau[c.getX() - 1][c.getY()] == position) autour.add(new Coordonnée(c.getX() - 1, c.getY()));
-                if (plateau[c.getX()][c.getY() - 1] == position) autour.add(new Coordonnée(c.getX(), c.getY() - 1));
+                if (plateau[c.getX() - 1][c.getY()] == position) autour.add(new Coordonnee(c.getX() - 1, c.getY()));
+                if (plateau[c.getX()][c.getY() - 1] == position) autour.add(new Coordonnee(c.getX(), c.getY() - 1));
             } else if (c.getX() == 0) {
-                if (plateau[c.getX()][c.getY() + 1] == position) autour.add(new Coordonnée(c.getX(), c.getY() + 1));
-                if (plateau[c.getX() + 1][c.getY()] == position) autour.add(new Coordonnée(c.getX() + 1, c.getY()));
+                if (plateau[c.getX()][c.getY() + 1] == position) autour.add(new Coordonnee(c.getX(), c.getY() + 1));
+                if (plateau[c.getX() + 1][c.getY()] == position) autour.add(new Coordonnee(c.getX() + 1, c.getY()));
                 if (plateau[c.getX() + 1][c.getY() - 1] == position)
-                    autour.add(new Coordonnée(c.getX() + 1, c.getY() - 1));
-                if (plateau[c.getX()][c.getY() - 1] == position) autour.add(new Coordonnée(c.getX(), c.getY() - 1));
+                    autour.add(new Coordonnee(c.getX() + 1, c.getY() - 1));
+                if (plateau[c.getX()][c.getY() - 1] == position) autour.add(new Coordonnee(c.getX(), c.getY() - 1));
             } else if (c.getX() == plateau.length-1) {
-                if (plateau[c.getX()][c.getY() - 1] == position) autour.add(new Coordonnée(c.getX(), c.getY() - 1));
+                if (plateau[c.getX()][c.getY() - 1] == position) autour.add(new Coordonnee(c.getX(), c.getY() - 1));
                 if (plateau[c.getX() - 1][c.getY() + 1] == position)
-                    autour.add(new Coordonnée(c.getX() - 1, c.getY() + 1));
-                if (plateau[c.getX()][c.getY() + 1] == position) autour.add(new Coordonnée(c.getX(), c.getY() + 1));
-                if (plateau[c.getX()][c.getY() - 1] == position) autour.add(new Coordonnée(c.getX(), c.getY() - 1));
+                    autour.add(new Coordonnee(c.getX() - 1, c.getY() + 1));
+                if (plateau[c.getX()][c.getY() + 1] == position) autour.add(new Coordonnee(c.getX(), c.getY() + 1));
+                if (plateau[c.getX()][c.getY() - 1] == position) autour.add(new Coordonnee(c.getX(), c.getY() - 1));
             } else if (c.getY() == 0) {
-                if (plateau[c.getX() - 1][c.getY()] == position) autour.add(new Coordonnée(c.getX() - 1, c.getY()));
+                if (plateau[c.getX() - 1][c.getY()] == position) autour.add(new Coordonnee(c.getX() - 1, c.getY()));
                 if (plateau[c.getX() - 1][c.getY() + 1] == position)
-                    autour.add(new Coordonnée(c.getX() - 1, c.getY() + 1));
-                if (plateau[c.getX()][c.getY() + 1] == position) autour.add(new Coordonnée(c.getX(), c.getY() + 1));
-                if (plateau[c.getX() + 1][c.getY()] == position) autour.add(new Coordonnée(c.getX() + 1, c.getY()));
+                    autour.add(new Coordonnee(c.getX() - 1, c.getY() + 1));
+                if (plateau[c.getX()][c.getY() + 1] == position) autour.add(new Coordonnee(c.getX(), c.getY() + 1));
+                if (plateau[c.getX() + 1][c.getY()] == position) autour.add(new Coordonnee(c.getX() + 1, c.getY()));
             } else if (c.getY() == plateau.length-1) {
-                if (plateau[c.getX() - 1][c.getY()] == position) autour.add(new Coordonnée(c.getX() - 1, c.getY()));
-                if (plateau[c.getX() + 1][c.getY()] == position) autour.add(new Coordonnée(c.getX() + 1, c.getY()));
+                if (plateau[c.getX() - 1][c.getY()] == position) autour.add(new Coordonnee(c.getX() - 1, c.getY()));
+                if (plateau[c.getX() + 1][c.getY()] == position) autour.add(new Coordonnee(c.getX() + 1, c.getY()));
                 if (plateau[c.getX() + 1][c.getY() - 1] == position)
-                    autour.add(new Coordonnée(c.getX() + 1, c.getY() - 1));
-                if (plateau[c.getX()][c.getY() - 1] == position) autour.add(new Coordonnée(c.getX(), c.getY() - 1));
+                    autour.add(new Coordonnee(c.getX() + 1, c.getY() - 1));
+                if (plateau[c.getX()][c.getY() - 1] == position) autour.add(new Coordonnee(c.getX(), c.getY() - 1));
             } else {
-                if (plateau[c.getX() - 1][c.getY()] == position) autour.add(new Coordonnée(c.getX(), c.getY() - 1));
+                if (plateau[c.getX() - 1][c.getY()] == position) autour.add(new Coordonnee(c.getX(), c.getY() - 1));
                 if (plateau[c.getX() - 1][c.getY() + 1] == position)
-                    autour.add(new Coordonnée(c.getX() - 1, c.getY() + 1));
-                if (plateau[c.getX()][c.getY() + 1] == position) autour.add(new Coordonnée(c.getX(), c.getY() + 1));
-                if (plateau[c.getX() + 1][c.getY()] == position) autour.add(new Coordonnée(c.getX() + 1, c.getY()));
+                    autour.add(new Coordonnee(c.getX() - 1, c.getY() + 1));
+                if (plateau[c.getX()][c.getY() + 1] == position) autour.add(new Coordonnee(c.getX(), c.getY() + 1));
+                if (plateau[c.getX() + 1][c.getY()] == position) autour.add(new Coordonnee(c.getX() + 1, c.getY()));
                 if (plateau[c.getX() + 1][c.getY() - 1] == position)
-                    autour.add(new Coordonnée(c.getX() + 1, c.getY() - 1));
-                if (plateau[c.getX()][c.getY() - 1] == position) autour.add(new Coordonnée(c.getX(), c.getY() - 1));
+                    autour.add(new Coordonnee(c.getX() + 1, c.getY() - 1));
+                if (plateau[c.getX()][c.getY() - 1] == position) autour.add(new Coordonnee(c.getX(), c.getY() - 1));
             }
         }
 
         return autour;
     }
 
-    private boolean verifCaseBlanc(Coordonnée c, Coordonnée origin) {
-        for (Coordonnée coo : autourCase(c,origin)) {
+    private boolean verifCaseBlanc(Coordonnee c, Coordonnee origin) {
+        for (Coordonnee coo : autourCase(c,origin)) {
             if (coo.getX() == plateau.length-1) return true;
             else verifCaseBlanc(coo,c);
         }
         return false;
     }
 
-    private boolean verifCaseNoir(Coordonnée c, Coordonnée origin) {
-        for (Coordonnée coo : autourCase(c,origin)) {
+    private boolean verifCaseNoir(Coordonnee c, Coordonnee origin) {
+        for (Coordonnee coo : autourCase(c,origin)) {
             if (coo.getY() == plateau.length-1) return true;
             else verifCaseBlanc(coo,c);
         }
@@ -129,11 +129,11 @@ public class PlateauClassique extends Plateau {
 
         for (int i = 0; i < plateau.length; i++) {
             if (plateau[i][0] == BLANC) {
-                Coordonnée c = new Coordonnée(i,0);
+                Coordonnee c = new Coordonnee(i,0);
                 if (verifCaseBlanc(c,null)) return true;
             }
             if (plateau[0][i] == NOIR) {
-                Coordonnée c = new Coordonnée(i,0);
+                Coordonnee c = new Coordonnee(i,0);
                 if (verifCaseNoir(c,null)) return true;
             }
         }
@@ -144,7 +144,7 @@ public class PlateauClassique extends Plateau {
         return false;
     }
 
-    public void jouerTour(Coordonnée i, int j) {
+    public void jouerTour(Coordonnee i, int j) {
         plateau[i.getX()][i.getY()] = j;
     }
 }

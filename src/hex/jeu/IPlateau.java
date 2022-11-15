@@ -1,6 +1,6 @@
 package hex.jeu;
 
-import hex.jeu.Plateau.Coordonnée;
+import hex.jeu.Plateau.Coordonnee;
 
 public interface IPlateau {
     int BLANC = 0;
@@ -17,5 +17,5 @@ public interface IPlateau {
 
     boolean fini();
 
-    void jouerTour(Coordonnée i, int j);
+    void jouerTour(Coordonnee i, int j);
 }
