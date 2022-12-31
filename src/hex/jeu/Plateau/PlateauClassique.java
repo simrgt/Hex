@@ -4,16 +4,16 @@ package hex.jeu.Plateau;
 import java.util.ArrayList;
 
 public class PlateauClassique extends Plateau {
-    private int plateau[][];
+    private Pion plateau[][];
     private int caseTotal;
 
     public PlateauClassique(int largeur) {
         assert(largeur == 11 || largeur ==  19 || largeur == 13 || largeur == 14);
         caseTotal = largeur*largeur;
-        plateau = new int[largeur][largeur];
+        plateau = new Pion[largeur][largeur];
         for (int i = 0 ; i < largeur; i++)
             for (int j = 0; j < largeur; j++)
-                plateau[i][j] = VIDE;
+                plateau[i][j] = Pion.Vide;
     }
 
     public int getTaille() {
@@ -128,7 +128,7 @@ public class PlateauClassique extends Plateau {
                 if (estBlanc(plateau[i][j]) || estNoir(plateau[i][j])) rempli++;
 
         for (int i = 0; i < plateau.length; i++) {
-            if (plateau[i][0] == BLANC) {
+            if (plateau[i][0] == Pion) {
                 Coordonnee c = new Coordonnee(i,0);
                 if (verifCaseBlanc(c,null)) return true;
             }
@@ -146,5 +146,10 @@ public class PlateauClassique extends Plateau {
 
     public void jouerTour(Coordonnee i, int j) {
         plateau[i.getX()][i.getY()] = j;
+    }
+
+    @Override
+    public Pion getCase(String b2) {
+        return plateau[][];
     }
 }

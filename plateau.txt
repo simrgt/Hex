@@ -31,3 +31,5 @@ pour plateau : tableau 2d ou map ou arraylist ou tableau 1D
 pour map : clé case, valeur couleur
 
 tableau 2D
+
+constructeur en plus dans plateau, pour tester si la partie est fini à un temps donnée

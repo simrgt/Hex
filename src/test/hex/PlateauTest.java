@@ -1,6 +1,7 @@
 package test.hex;
 
 import hex.jeu.IPlateau;
+import hex.jeu.Plateau.Pion;
 import hex.jeu.Plateau.PlateauClassique;
 import org.testng.annotations.Test;
 
@@ -26,6 +27,8 @@ public class PlateauTest {
                         "9         * * * * * * * * * * *\n" +
                         "10         * * * * * * * * * * *\n" +
                         "11          * * * * * * * * * * *\n", p.toString());
+
+        assertEquals(Pion.Croix, p.getCase("B2"));
     }
 
 }
